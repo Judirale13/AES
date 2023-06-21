@@ -46,18 +46,16 @@
 
         input[type="submit"] {
             display: inline-block;
-            padding: 15px 30px;
-            background-color: #4CAF50;
+            padding: 10px 20px;
+            background-color: #333;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 18px;
-            transition: background-color 0.3s;
-            cursor: pointer;
+            margin-right: 10px;
         }
 
         input[type="submit"]:hover {
-            background-color: #45a049;
+            background-color: #555;
         }
 
         .message-container {
@@ -80,33 +78,39 @@
             font-size: 18px;
         }
 
-        .button {
+        .cta-button {
             display: inline-block;
-            padding: 15px 30px;
-            background-color: #4CAF50;
+            padding: 10px 20px;
+            background-color: #333;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 18px;
-            transition: background-color 0.3s;
-            margin-right: 20px;
+            margin-right: 10px;
         }
 
-        .button:hover {
-            background-color: #45a049;
+        .cta-button:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Encriptar mensaje</h1>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+    <div class="container" style="margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);">
+        <h1>Encriptación</h1>
         <form method="POST" action="{% url 'encrypt' %}">
             {% csrf_token %}
             <label for="plaintext">Texto a encriptar:</label>
             <input type="text" name="plaintext" required><br>
             <label for="key">Clave:</label>
             <input type="text" name="key" required><br>
-            <input type="submit" value="Encriptar">
+            <input type="submit" class="cta-button" value="Encriptar">
         </form>
 
         {% if encrypted_message %}
@@ -114,9 +118,10 @@
             <h2>Mensaje encriptado:</h2>
             <p>{{ encrypted_message }}</p>
         </div>
+        <br>
         {% endif %}
 
-        <a href="{% url 'home' %}" class="button">Volver a la página de inicio</a>
+        <a href="{% url 'home' %}" class="cta-button">Volver a la página de inicio</a>
     </div>
 </body>
 </html>
