@@ -66,8 +66,7 @@ TEMPLATES = [
         },
     },
 ]
-
-WSGI_APPLICATION = 'Proyecto_AES.wsgi.application'
+WSGI_APPLICATION = 'vercel_app.wsgi.app'
 
 
 # Database
@@ -121,3 +120,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
