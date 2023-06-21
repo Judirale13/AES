@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("aes-video-encryption-256-128.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        h1 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        /* Resto del código CSS... */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero-section">
+            <h1>Bienvenido al encriptador</h1>
+            <p>Encripta y desencripta tus mensajes de forma segura</p>
+            <a href="{% url 'encrypt' %}" class="cta-button">Encriptar mensaje</a>
+            <a href="{% url 'decrypt' %}" class="cta-button">Desencriptar mensaje</a>
+        </div>
+
+        <h2>¿Qué es el encriptador?</h2>
+        <p>El encriptador es una herramienta que te permite proteger tus mensajes confidenciales mediante el uso de algoritmos de encriptación seguros.</p>
+
+        <h2>¿Cómo funciona?</h2>
+        <p>Simplemente ingresa tu mensaje y una clave secreta en el formulario de encriptación para generar un mensaje encriptado. Luego, utiliza la opción de desencriptación para recuperar el mensaje original.</p>
+
+        <h2>¡Protege tus comunicaciones!</h2>
+        <p>Utiliza el encriptador para asegurar tus mensajes importantes y proteger tu privacidad.</p>
+    </div>
+</body>
+</html>
